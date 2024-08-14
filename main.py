@@ -2,8 +2,8 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 
-MODEL_PATH = r"Model\training_model.keras"
-HOME_IMAGE = r"Images\Banner.jpg"
+MODEL_PATH = "Model/training_model.keras"
+HOME_IMAGE = "Images/Banner.jpg"
 
 st.set_page_config(
     page_title="Fruits & Veg Prediction",
@@ -64,7 +64,7 @@ def AboutPage():
 
 def PredictionPage():
     st.header("Prediction")
-    test_image = st.file_uploader("Choose an Image: ")
+    test_image = st.file_uploader("Choose an Image: ", type=["jpg", "jpeg", "png"])
     if test_image:
         st.image(test_image, width=280, use_column_width=False)
         if (st.button("Predict")):
@@ -80,7 +80,7 @@ def PredictionPage():
             st.write("Model Predicting... ")
             st.success(label[result_index])
     else:
-        st.markdown('<p style="color:red;">Upload A Image First!!</p>', unsafe_allow_html=True)
+        st.markdown('<p style="color:red;">Upload An Image (.jpg, .jpeg, .png) First!!</p>', unsafe_allow_html=True)
 
 
 def Model_Prediction(test_image):
