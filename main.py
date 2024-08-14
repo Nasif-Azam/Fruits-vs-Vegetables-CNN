@@ -2,8 +2,8 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 
-MODEL_PATH = r"Model\training_model.keras"
-HOME_IMAGE = r"Images\Banner.jpg"
+MODEL_PATH = "Model/training_model.keras"
+HOME_IMAGE = "Images/Banner.jpg"
 
 st.set_page_config(
     page_title="Fruits & Veg Prediction",
